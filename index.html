@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football 2022-2023 Player Stats</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://d3js.org/d3.v6.js"></script>
+</head>
+<body>
+    <div class="filters-container">
+        <label for="league-select">Choose a League:</label>
+        <select id="league-select"></select>
+
+        <label for="team1-select">Select Team 1:</label>
+        <select id="team1-select"></select>
+
+        <label for="team2-select">Select Team 2:</label>
+        <select id="team2-select"></select>
+
+        <label for="position-select">Choose a Position:</label>
+
+        <select id="position-select"></select>
+    </div>
+
+    <div class="svg-container">
+        <svg class="bubble-plot" width="960" height="500"></svg>
+    </div>
+
+    <div class="main-container">
+        <div class="player-container" id="player1-container">
+            <label for="player1-select">Select Player 1:</label>
+            <select id="player1-select"></select>
+            <div class="player-info" id="player1-info"></div>
+        </div>
+
+        <svg class="radar-chart" width="500" height="500"></svg>
+    
+        
+
+        <div class="player-container" id="player2-container">
+            <label for="player2-select">Select Player 2:</label>
+            <select id="player2-select"></select>
+            <div class="player-info" id="player2-info"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

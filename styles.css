@@ -1,0 +1,153 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center; /* Center align the content */
+}
+
+.filters-container {
+    display: block;
+    margin: 20px auto; /* Centering the filters container with auto margins */
+}
+
+.filters-container label,
+.filters-container select {
+    display: inline-block;
+    margin: 5px;
+    vertical-align: middle;
+}
+
+.svg-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.bubble {
+    fill-opacity: 0.7;
+    stroke: #ffffff;
+    stroke-width: 0.5;
+}
+
+.bubble:hover {
+    stroke: black;
+    stroke-width: 2;
+}
+
+.tooltip {
+    position: absolute;
+    pointer-events: none;
+    text-align: center;
+    padding: 8px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 12px;
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.3s; /* Fades in/out */
+    z-index: 10;
+    white-space: nowrap; /* Ensures the content doesn't wrap */
+    /* Adjust tooltip position */
+    top: 0; /* Initial position, will be updated dynamically */
+    left: 0; /* Initial position, will be updated dynamically */
+    transform: translate(-50%, -100%); /* Offset from the cursor */
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.radar-chart {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
+                -5px -5px 10px rgba(255, 255, 255, 0.5);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    color: #666;
+}
+
+.player-container {
+    flex-basis: 48%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.player-info {
+    text-align: center;
+    margin-top: 10px;
+}
+
+@media screen and (min-width: 1200px) {
+    .player-container {
+        flex-basis: 24%;
+    }
+}
+
+.legend-container {
+    position: absolute;
+    top: 50px; /* Adjust as needed for alignment */
+    left: 10px; /* Add some space from the left edge */
+    width: auto; /* Let it size as per content */
+    max-width: 220px; /* Maximum width of the legend area */
+    padding: 10px; /* Padding inside the container */
+    box-sizing: border-box;
+    z-index: 10; /* Ensure it's above other content */
+    background-color: lightgrey; /* Light grey background */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start (left) */
+    font-size: 14px; /* Adjust the font size as needed */
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px; /* Optional: rounds the corners of the legend box */
+}
+
+.legend-block {
+    background-color: #f9f9f9; /* Slightly off-white for contrast */
+    margin-bottom: 10px; /* Spacing between legend entries */
+    padding: 8px; /* Padding inside each legend block */
+    border: 1px solid #ccc; /* Border to distinguish each block */
+    border-radius: 3px; /* Rounds the corners of each block */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1); /* Optional: adds subtle shadow for depth */
+}
+
+.legend-title {
+    font-weight: bold;
+    color: #333; /* Darker font color for the title */
+    margin-bottom: 4px; /* Spacing after the title */
+    font-size: 18px;
+}
+
+.legend-text {
+    color: #666; /* Lighter font color for the text */
+    text-align: left; /* Align text to the left */
+    font-size: 16px;
+}
+
+/* Additional styles for SVG */
+svg {
+    display: block;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
+                -5px -5px 10px rgba(255, 255, 255, 0.5);
+}
+
+.player-info-block {
+    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white, similar to the legend */
+    border: 2px solid #ccc; /* Placeholder for the border color, it will be set dynamically */
+    padding: 10px;
+    margin-bottom: 5px; /* Spacing between blocks */
+    font-size: 14px; /* Adjust to match legend text size */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    border-radius: 3px; /* Rounds the corners of the block */
+}
+
